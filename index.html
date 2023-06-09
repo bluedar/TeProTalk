@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>테프로톡</title>
+    <link rel="shortcut icon" href="img/icon.png" />
+    <link rel="manifest" href="Manifest.json" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        //서비스워커가 있을때 (서비스워커 지원여부)
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then((success) => {
+            console.log("seviceWorker 설치에 성공했습니다!", success);
+          })
+          .catch((error) => {
+            console.log("seviceWorker 설치에 실패했습니다!", error);
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="login_container">
+      <div class="login">
+        <h1 class="login_logo">테프로톡</h1>
+
+        <form action="./chatList.html" class="login_form">
+          <input
+            type="email"
+            class="login_form_id"
+            placeholder="테프로계정(이메일 또는 전화번호)"
+          />
+          <input type="password" class="login_form_pw" placeholder="비밀번호" />
+          <input type="submit" class="login_form_btn" value="로그인" />
+          <input type="checkbox" class="login_form_check" id="check" />
+          <label for="check">자동로그인</label>
+        </form>
+
+        <p class="login_account">
+          <a href="#">테프로 계정 찾기</a>
+          <span>|</span>
+          <a href="#">비밀번호 재설정</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

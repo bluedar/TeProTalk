@@ -1,0 +1,17 @@
+$bg-color: aqua;
+$gray1:#666666;
+$gray2:#b9c1c9;
+$gray3:#e2cff5;
+$gray4:#e4ddeb;
+$gray5:#e8e9eb;
+$gray6:#f1f1f1;
+
+
+$opasicyBlack:rgba(0,0,0,0.2);
+$opasicyBlack2:rgba(0,0,0,0.5);
+
+@mixin set-box($height,$width:100%,$border-radius:0){
+  height:$height;
+  width:$width;
+  border-radius: $border-radius;
+}
