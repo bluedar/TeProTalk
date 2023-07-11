@@ -8,7 +8,11 @@ const makeTalk = (chatValue) => {
   const createDiv = document.createElement("div");
   createDiv.classList.add("preview");
   createDiv.classList.add("bubble_preview");
-  createDiv.classList.add("my");
+  if (chatValue.includes("you:")) {
+  } else {
+    createDiv.classList.add("my");
+  }
+
   createDiv.innerHTML = `
             <div class="preview_col">
               <div class="preview_pic"></div>
